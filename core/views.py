@@ -4,8 +4,11 @@ from django.shortcuts import render, HttpResponse
 def home(request):
     return render(request,"core/home.html")
 
-def about(request):
-    return render(request,"core/about.html")
+def estadisticas(request):
+    return render(request,"core/estadisticas.html")
 
 def portafolio(request):
-    return render(request,"core/portafolio.html")    
+    return render(request,"core/portafolio.html")   
+
+def tablaplayers(request):
+    return render(request,"core/tablaplayers.html")  

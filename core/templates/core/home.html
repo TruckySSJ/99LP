@@ -1,15 +1,26 @@
 {% extends 'core/base.html' %} 
 
-{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/home-static.png' %}{% endblock %}
 
 {% block headers %}
               
 <h1>99LP</h1>
+<p>Tu Web App para poder visualizar estadisticas de el videojuego League Of Legends</p>
 
 {% endblock %}              
 
 {% block content %}
 
-<h1>Hola Mundo!</h1>
+<div class="jumbotron">
+<h1 class="h2 text-center text-white bg-dark">Origen</h1>
+<p class="h5 text-center text-primary">99LP se origino por la nesecidad de tener un lugar donde poder visualizar, comparar y analizar los detalles
+del rendimiento de los jugadores de la escena competitiva de League Of Legends.</p>
+</div>
+
+<div class="jumbotron">
+<h1 class="h2 text-center text-white bg-dark">Tecnologia Utilizada</h1>
+<p class="h5 text-center text-primary">Esta Web App se utilizaron varias tecnologias entre las mas destacadas
+e importantes son Django (Framework de Python) y BeautifoulSoup.</p>
+</div>
 
 {% endblock %}

@@ -7,8 +7,7 @@ def home(request):
 def estadisticas(request):
     return render(request,"core/estadisticas.html")
 
-def portafolio(request):
-    return render(request,"core/portafolio.html")   
+  
 
 def tablaplayers(request):
     return render(request,"core/tablaplayers.html")  

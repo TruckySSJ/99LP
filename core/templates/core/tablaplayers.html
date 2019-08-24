@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %} 
+
+{% block background %}{% load static %}{% static 'core/img/esports-2.jpg' %}{% endblock %}
+
+{% block headers %}
+              
+<h1>Jugadores</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h2>Lista de jugadores</h2>
+  <p>Ingresa el nombre de tu jugador favorito para buscarlo o ingresa un dato exacto para encontrarlo!</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Buscar">
+  <br>
+</div>  
+
+<table class="table table-hover table-dark table-bordered table-responsive">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Posicion</th>
+      <th scope="col">Partidas</th>
+      <th scope="col">Win Rate</th>
+      <th scope="col">KDA</th>
+      <th scope="col">AVG Kills</th>
+      <th scope="col">AVG Deaths</th>
+      <th scope="col">AVG Assits</th>
+      <th scope="col">DMG</th>
+      <th scope="col">Solo Kills</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    {% for jugador in playerlist %}
+    <tr>
+      <td>{{jugador.player}}</td>
+      <td>{{jugador.position}}</td>
+      <td>{{jugador.games}}</td>
+      <td>{{jugador.win_rate}}</td>
+      <td>{{jugador.kda}}</td>
+      <td>{{jugador.avg_kills}}</td>
+      <td>{{jugador.avg_deaths}}</td>
+      <td>{{jugador.avg_assists}}</td>
+      <td>{{jugador.dmg}}</td>
+      <td>{{jugador.solo_kills}}</td>
+    </tr>        
+    {% endfor %}  
+  </tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+{% endblock %}

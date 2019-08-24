@@ -11,16 +11,130 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<!--<div class="jumbotron">
 <h1 class="h2 text-center text-white bg-dark">Origen</h1>
 <p class="h5 text-center text-primary">99LP se origino por la nesecidad de tener un lugar donde poder visualizar, comparar y analizar los detalles
 del rendimiento de los jugadores de la escena competitiva de League Of Legends.</p>
-</div>
+</div> -->
 
-<div class="jumbotron">
+<section class="text-center">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">Que es 99LP?</h2>
+  <!-- Section description -->
+  <p class="lead grey-text w-responsive mx-auto mb-5">99LP es una web app que nos permite obtener datos estadisticos
+  de los jugadores de la escena competitiva del videojuego League of Leguends.</p>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-4">
+
+      <img src="{% static 'core/img/baseline-timeline-24px.svg' %}" width="100" height="100">
+      <h5 class="font-weight-bold my-4">Analisis</h5>
+      <p class="grey-text mb-md-0 mb-5">En 99LP encontraras analisis estaditicos de todos los jugadores.
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4">
+      <img src="{% static 'core/img/baseline-donut_small-24px.svg' %}" width="100" height="100">
+      <h5 class="font-weight-bold my-4">Graficos</h5>
+      <p class="grey-text mb-md-0 mb-5">Encontraras graficos comparativos de las estadisticas de cada jugador.
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4">
+      <img src="{% static 'core/img/baseline-history-24px.svg' %}" width="100" height="100">
+      <h5 class="font-weight-bold my-4">Datos actualizados</h5>
+      <p class="grey-text mb-0">Todos los datos se iran actualizando constantemente despues de cada fecha de partidas.
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+
+<section class="my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold text-center my-5">De donde saca los datos 99LP?</h2>
+  <!-- Section description -->
+  <p class="lead grey-text text-center w-responsive mx-auto mb-5">Los datos son scrappiados desde el sitio web <a href="https://gol.gg/esports/home/">Gol.gg</a>
+  para luego ser limpiados y almacenados en la Web App 99LP.</p>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5 text-center text-lg-left">
+      <img class="img-fluid" src="{% static 'core/img/keyboard.svg' %}" alt="Sample image" width="400" height="400">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Grid row -->
+      <div class="row mb-3">
+
+        <!-- Grid column -->
+        <div class="col-1">
+          <i class="fas fa-share fa-lg indigo-text"></i>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-xl-10 col-md-11 col-10">
+          <h5 class="font-weight-bold mb-3">Como nace 99LP?</h5>
+          <p class="grey-text">Esta Web App nace a travez de la necesidad de poder visualizar y comparar jugadores de la escena competitiva
+          de League of Leguends de manera facil y rapida.</p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+      <!-- Grid row -->
+      <div class="row mb-3">
+
+        <!-- Grid column -->
+        <div class="col-1">
+          <i class="fas fa-share fa-lg indigo-text"></i>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-xl-10 col-md-11 col-10">
+          <h5 class="font-weight-bold mb-3">Tecnologias</h5>
+          <p class="grey-text">Las tecnologias ocupadas para este proyecto fueron las siguientes: como lenguaje
+          base Python, para la obstencion de datos BeatifoulSoup y para el despliegue el Framework Django.</p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+      
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+
+<!--<div class="jumbotron">
 <h1 class="h2 text-center text-white bg-dark">Tecnologia Utilizada</h1>
 <p class="h5 text-center text-primary">Esta Web App se utilizaron varias tecnologias entre las mas destacadas
 e importantes son Django (Framework de Python) y BeautifoulSoup.</p>
-</div>
+</div> -->
 
 {% endblock %}

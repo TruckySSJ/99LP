@@ -32,7 +32,13 @@ def graf_barras(request):
     best_mid = Players.objects.filter(player='Yoshino').filter(position='MID')
     best_jg = Players.objects.filter(player='NikoleX').filter(position='JUNGLE')
     best_top = Players.objects.filter(player='Thien').filter(position='TOP')
-    return render(request, 'core/estadisticas.html',{'cant_adc': cant_adc, 'cant_supp': cant_supp, 'cant_mid': cant_mid, 'cant_jg': cant_jg, 'cant_top': cant_top, 'all_players': all_players, 'best_adc': best_adc, 'best_supp': best_supp, 'best_mid': best_mid, 'best_jg': best_jg, 'best_top': best_top})
+    adc_kills = Players.objects.filter(position='ADC')
+    adc_ficha = Players.objects.filter(win_rate='100%').filter(position='ADC').count()
+    supp_ficha = Players.objects.filter(win_rate='100%').filter(position='SUPPORT').count()
+    mid_ficha = Players.objects.filter(win_rate='100%').filter(position='MID').count()
+    jg_ficha = Players.objects.filter(win_rate='100%').filter(position='JUNGLE').count()
+    top_ficha = Players.objects.filter(win_rate='100%').filter(position='TOP').count()
+    return render(request, 'core/estadisticas.html',{'cant_adc': cant_adc, 'cant_supp': cant_supp, 'cant_mid': cant_mid, 'cant_jg': cant_jg, 'cant_top': cant_top, 'all_players': all_players, 'best_adc': best_adc, 'best_supp': best_supp, 'best_mid': best_mid, 'best_jg': best_jg, 'best_top': best_top, 'adc_kills': adc_kills, 'adc_ficha': adc_ficha, 'supp_ficha': supp_ficha, 'mid_ficha': mid_ficha, 'jg_ficha': jg_ficha, 'top_ficha': top_ficha})
 
 def tabla_players(request):
     playerlist = Players.objects.all()

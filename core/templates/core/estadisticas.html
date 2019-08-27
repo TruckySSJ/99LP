@@ -561,4 +561,137 @@ Highcharts.chart('grafficha', {
 
 </div>  -->
 
+<!-- GRAFICO ADC KILLS -->
+
+<div class="container">
+
+<h3 style="text-align: center;">PROMEDIO DE ASESINATOS DE TODOS LOS ADC </h3>
+
+<div id="grafficha"> </div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script>
+
+Highcharts.chart('grafficha', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'PROMEDIO DE ASESINATOS DE TODOS LOS JUGADORES ADC'
+    },
+    subtitle: {
+        text: 'DISTINGUE AL JUGADOR QUE TIENE MEJOR PROMEDIO!'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'PROMEDIO'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'CANTIDAD DE ASESINATOS: <b>{point.y:.1f} PROMEDIO</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            {% for ficha in adc_kills %}
+            ['{{ficha.player}}', {{ficha.avg_kills}}],
+            {% endfor %}
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+</script>
+
+</div>
+
+<!-- GRAFICO DE JUGADORES 100 WIN RATE-->
+
+<div class="container">
+
+<h3 style="text-align: center;">QUE ROL TIENE MAS WIN RATE PERFECTO?</h3>
+
+<div id="100si"></div>
+		<script src="https://code.highcharts.com/highcharts.src.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script>
+  	Highcharts.chart('100si', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'QUE ROL TIENE MAS WIN_RATE PERFECTO?'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'CANTIDAD',
+        colorByPoint: true,
+        data: [{
+            name: 'ADC',
+            y: {{adc_ficha}},
+            sliced: true,
+            selected: true
+        }, {
+            name: 'SUPPORT',
+            y: {{supp_ficha}}
+        }, {
+            name: 'MID',
+            y: {{mid_ficha}}
+        }, {
+            name: 'JUNGLE',
+            y: {{jg_ficha}}
+        }, {
+            name: 'TOP',
+            y: {{top_ficha}}
+        }]
+    }]
+});
+		</script>
+</div>
+
 {% endblock %}
